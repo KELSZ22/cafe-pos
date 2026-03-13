@@ -92,9 +92,6 @@ export default function AddonsModal({
             <X className="h-4 w-4" />
           </button>
           <div className="absolute bottom-3 left-4">
-            <p className="text-xs font-medium text-white/80">
-              {product.nameFil}
-            </p>
             <h2 className="text-lg font-bold text-white">{product.name}</h2>
           </div>
         </div>

@@ -43,9 +43,6 @@ export default function ProductCard({ product, onClick }: ProductCardProps) {
         )}
       </div>
       <div className="flex flex-1 flex-col gap-1 p-3">
-        <p className="text-xs font-medium text-cafe-text-muted">
-          {product.nameFil}
-        </p>
         <p className="text-sm font-semibold leading-tight text-cafe-text">
           {product.name}
         </p>

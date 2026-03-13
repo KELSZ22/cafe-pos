@@ -18,7 +18,6 @@ export default function ProductGrid() {
     filteredProducts = filteredProducts.filter(
       (p) =>
         p.name.toLowerCase().includes(q) ||
-        p.nameFil.toLowerCase().includes(q) ||
         p.description.toLowerCase().includes(q),
     )
   }

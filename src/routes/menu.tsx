@@ -53,8 +53,7 @@ function MenuManagement() {
   const filtered = products.filter((p) => {
     const matchSearch =
       !search.trim() ||
-      p.name.toLowerCase().includes(search.toLowerCase()) ||
-      p.nameFil.toLowerCase().includes(search.toLowerCase())
+      p.name.toLowerCase().includes(search.toLowerCase())
     const matchCat = filterCat === 'all' || p.category === filterCat
     return matchSearch && matchCat
   })
@@ -362,7 +361,6 @@ function ProductsTab({
               <div className="flex items-start justify-between gap-1">
                 <div>
                   <p className="text-sm font-semibold text-cafe-text">{product.name}</p>
-                  <p className="text-[10px] text-cafe-text-muted">{product.nameFil}</p>
                 </div>
                 <span
                   className={cn(
@@ -445,9 +443,7 @@ function CategoriesTab({
             </div>
             <div className="flex-1">
               <p className="text-sm font-semibold text-cafe-text">{cat.name}</p>
-              <p className="text-[10px] text-cafe-text-muted">
-                {cat.nameFil} &bull; {count} items
-              </p>
+              <p className="text-[10px] text-cafe-text-muted">{count} items</p>
             </div>
             <button
               onClick={() => onDelete(cat)}
@@ -610,7 +606,6 @@ function ProductFormModal({
   onClose: () => void
 }) {
   const [name, setName] = useState(product?.name ?? '')
-  const [nameFil, setNameFil] = useState(product?.nameFil ?? '')
   const [category, setCategory] = useState(product?.category ?? categories[0]?.id ?? '')
   const [price, setPrice] = useState(product?.price?.toString() ?? '')
   const [description, setDescription] = useState(product?.description ?? '')
@@ -661,7 +656,6 @@ function ProductFormModal({
     if (!name.trim() || !price.trim()) return
     onSave({
       name: name.trim(),
-      nameFil: nameFil.trim(),
       category,
       price: parseInt(price, 10),
       description: description.trim(),
@@ -689,24 +683,14 @@ function ProductFormModal({
 
         <div className="flex-1 overflow-y-auto p-6 pos-scrollbar">
           <div className="space-y-4">
-            <div className="grid grid-cols-2 gap-3">
-              <FormField label="Product Name" icon={<Package className="h-4 w-4" />}>
-                <input
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  placeholder="e.g. Americano"
-                  className="form-input"
-                />
-              </FormField>
-              <FormField label="Filipino Name">
-                <input
-                  value={nameFil}
-                  onChange={(e) => setNameFil(e.target.value)}
-                  placeholder="e.g. Kapeng Amerikano"
-                  className="form-input"
-                />
-              </FormField>
-            </div>
+            <FormField label="Product Name" icon={<Package className="h-4 w-4" />}>
+              <input
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                placeholder="e.g. Americano"
+                className="form-input"
+              />
+            </FormField>
 
             <div className="grid grid-cols-2 gap-3">
               <FormField label="Category">
@@ -1058,7 +1042,6 @@ function CategoryFormModal({
   onClose: () => void
 }) {
   const [name, setName] = useState('')
-  const [nameFil, setNameFil] = useState('')
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center">
@@ -1086,17 +1069,6 @@ function CategoryFormModal({
               className="h-10 w-full rounded-xl border border-cafe-border bg-cafe-card px-3 text-sm text-cafe-text placeholder:text-cafe-text-light focus:border-cafe-brown-light focus:outline-none focus:ring-2 focus:ring-cafe-brown-light/20"
             />
           </div>
-          <div>
-            <label className="mb-1 block text-xs font-semibold text-cafe-text-muted">
-              Filipino Name
-            </label>
-            <input
-              value={nameFil}
-              onChange={(e) => setNameFil(e.target.value)}
-              placeholder="e.g. Panaderya"
-              className="h-10 w-full rounded-xl border border-cafe-border bg-cafe-card px-3 text-sm text-cafe-text placeholder:text-cafe-text-light focus:border-cafe-brown-light focus:outline-none focus:ring-2 focus:ring-cafe-brown-light/20"
-            />
-          </div>
         </div>
 
         <div className="mt-5 flex gap-2">
@@ -1107,10 +1079,10 @@ function CategoryFormModal({
             Cancel
           </button>
           <button
-            onClick={() => {
-              if (!name.trim()) return
-              onSave({ name: name.trim(), nameFil: nameFil.trim(), icon: 'tag' })
-            }}
+              onClick={() => {
+                if (!name.trim()) return
+                onSave({ name: name.trim(), icon: 'tag' })
+              }}
             disabled={!name.trim()}
             className="flex-1 rounded-xl bg-cafe-brown py-3 text-sm font-semibold text-white shadow-md transition hover:bg-cafe-brown-dark disabled:opacity-40"
           >

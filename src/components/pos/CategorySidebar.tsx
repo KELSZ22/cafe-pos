@@ -25,10 +25,7 @@ export default function CategorySidebar() {
   const setSelectedCategory = usePosStore((s) => s.setSelectedCategory)
   const products = usePosStore((s) => s.products)
 
-  const allItems = [
-    { id: 'all', name: 'All', nameFil: 'Lahat', icon: 'all' },
-    ...categories,
-  ]
+  const allItems = [{ id: 'all', name: 'All', icon: 'all' }, ...categories]
 
   return (
     <>

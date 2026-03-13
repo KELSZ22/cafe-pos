@@ -13,7 +13,6 @@ export interface ProductSize {
 export interface Product {
   id: string
   name: string
-  nameFil: string
   category: string
   price: number
   image: string
@@ -26,7 +25,6 @@ export interface Product {
 export interface Category {
   id: string
   name: string
-  nameFil: string
   icon: string
 }
 
@@ -74,19 +72,17 @@ export const defaultSettings: StoreSettings = {
 }
 
 export const categories: Category[] = [
-  { id: 'coffee', name: 'Coffee', nameFil: 'Kape', icon: 'coffee' },
+  { id: 'coffee', name: 'Coffee', icon: 'coffee' },
   {
     id: 'non-coffee',
     name: 'Non-Coffee',
-    nameFil: 'Walang Kape',
     icon: 'cup-soda',
   },
-  { id: 'tea', name: 'Tea', nameFil: 'Tsaa', icon: 'leaf' },
-  { id: 'dessert', name: 'Dessert', nameFil: 'Panghimagas', icon: 'cake' },
+  { id: 'tea', name: 'Tea', icon: 'leaf' },
+  { id: 'dessert', name: 'Dessert', icon: 'cake' },
   {
     id: 'smoothie',
     name: 'Smoothie',
-    nameFil: 'Smoothie',
     icon: 'glass-water',
   },
 ]
@@ -148,7 +144,6 @@ export const products: Product[] = [
   {
     id: 'americano',
     name: 'Americano',
-    nameFil: 'Kapeng Amerikano',
     category: 'coffee',
     price: 120,
     image: coffeeImages[0]!,
@@ -160,7 +155,6 @@ export const products: Product[] = [
   {
     id: 'cafe-latte',
     name: 'Cafe Latte',
-    nameFil: 'Kapeng Latte',
     category: 'coffee',
     price: 150,
     image: coffeeImages[1]!,
@@ -172,7 +166,6 @@ export const products: Product[] = [
   {
     id: 'cappuccino',
     name: 'Cappuccino',
-    nameFil: 'Kapuchino',
     category: 'coffee',
     price: 150,
     image: coffeeImages[2]!,
@@ -184,7 +177,6 @@ export const products: Product[] = [
   {
     id: 'vanilla-latte',
     name: 'Vanilla Latte',
-    nameFil: 'Banilya Latte',
     category: 'coffee',
     price: 170,
     image: coffeeImages[3]!,
@@ -196,7 +188,6 @@ export const products: Product[] = [
   {
     id: 'caramel-macchiato',
     name: 'Caramel Macchiato',
-    nameFil: 'Karamel Makiyato',
     category: 'coffee',
     price: 180,
     image:
@@ -209,7 +200,6 @@ export const products: Product[] = [
   {
     id: 'mocha',
     name: 'Cafe Mocha',
-    nameFil: 'Kapeng Moka',
     category: 'coffee',
     price: 175,
     image: coffeeImages[5]!,
@@ -222,7 +212,6 @@ export const products: Product[] = [
   {
     id: 'chocolate-latte',
     name: 'Chocolate Latte',
-    nameFil: 'Tsokolateng Latte',
     category: 'non-coffee',
     price: 155,
     image:
@@ -235,7 +224,6 @@ export const products: Product[] = [
   {
     id: 'strawberry-latte',
     name: 'Strawberry Latte',
-    nameFil: 'Istroberi Latte',
     category: 'non-coffee',
     price: 165,
     image:
@@ -248,7 +236,6 @@ export const products: Product[] = [
   {
     id: 'matcha-latte',
     name: 'Matcha Latte',
-    nameFil: 'Matsa Latte',
     category: 'non-coffee',
     price: 175,
     image:
@@ -261,7 +248,6 @@ export const products: Product[] = [
   {
     id: 'ube-latte',
     name: 'Ube Latte',
-    nameFil: 'Ubeng Latte',
     category: 'non-coffee',
     price: 175,
     image:
@@ -275,7 +261,6 @@ export const products: Product[] = [
   {
     id: 'green-tea',
     name: 'Green Tea',
-    nameFil: 'Berdeng Tsaa',
     category: 'tea',
     price: 100,
     image: teaImages[0]!,
@@ -287,7 +272,6 @@ export const products: Product[] = [
   {
     id: 'calamansi-tea',
     name: 'Calamansi Honey Tea',
-    nameFil: 'Kalamansi at Pulot-Pukyutan',
     category: 'tea',
     price: 110,
     image: teaImages[1]!,
@@ -299,7 +283,6 @@ export const products: Product[] = [
   {
     id: 'chamomile-tea',
     name: 'Chamomile Tea',
-    nameFil: 'Tsaang Kamomile',
     category: 'tea',
     price: 100,
     image: teaImages[2]!,
@@ -311,7 +294,6 @@ export const products: Product[] = [
   {
     id: 'earl-grey',
     name: 'Earl Grey',
-    nameFil: 'Earl Grey Tsaa',
     category: 'tea',
     price: 110,
     image:
@@ -325,7 +307,6 @@ export const products: Product[] = [
   {
     id: 'ensaymada',
     name: 'Ensaymada',
-    nameFil: 'Ensaymadang Espesyal',
     category: 'dessert',
     price: 85,
     image: dessertImages[0]!,
@@ -337,7 +318,6 @@ export const products: Product[] = [
   {
     id: 'leche-flan',
     name: 'Leche Flan',
-    nameFil: 'Letse Flan',
     category: 'dessert',
     price: 120,
     image: dessertImages[1]!,
@@ -349,7 +329,6 @@ export const products: Product[] = [
   {
     id: 'ube-cheesecake',
     name: 'Ube Cheesecake',
-    nameFil: 'Ubeng Cheesecake',
     category: 'dessert',
     price: 165,
     image: dessertImages[2]!,
@@ -361,7 +340,6 @@ export const products: Product[] = [
   {
     id: 'buko-pandan',
     name: 'Buko Pandan Cake',
-    nameFil: 'Bukong Pandan Keyk',
     category: 'dessert',
     price: 140,
     image: dessertImages[3]!,
@@ -374,7 +352,6 @@ export const products: Product[] = [
   {
     id: 'mango-smoothie',
     name: 'Mango Smoothie',
-    nameFil: 'Mangang Smoothie',
     category: 'smoothie',
     price: 160,
     image: smoothieImages[0]!,
@@ -386,7 +363,6 @@ export const products: Product[] = [
   {
     id: 'berry-smoothie',
     name: 'Mixed Berry Smoothie',
-    nameFil: 'Halong Berries Smoothie',
     category: 'smoothie',
     price: 175,
     image: smoothieImages[1]!,
