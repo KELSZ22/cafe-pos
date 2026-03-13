@@ -67,7 +67,7 @@ export const defaultSettings: StoreSettings = {
   storeName: 'Daily Grind Cafe',
   storeSubtitle: 'Crafted Coffee and Tea',
   taxRate: 12,
-  receiptFooter: 'Salamat po sa pagbisita sa Kubo Cafe! Balik ka ha ♥',
+  receiptFooter: 'Salamat po sa pagbisita sa Daily Grind! Balik ka ha ♥',
   cashierName: 'Michael',
   currency: '₱',
   logoUrl: '',
