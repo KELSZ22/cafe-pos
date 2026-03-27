@@ -1,5 +1,5 @@
 import { Link, useMatches } from '@tanstack/react-router'
-import { LayoutGrid, UtensilsCrossed, ClipboardList, BarChart3, Settings } from 'lucide-react'
+import { LayoutGrid, UtensilsCrossed, ClipboardList, BarChart3, Settings, Building2 } from 'lucide-react'
 import { cn } from '#/lib/utils'
 
 const navItems = [
@@ -7,6 +7,7 @@ const navItems = [
   { to: '/menu' as const, label: 'Menu', icon: UtensilsCrossed },
   { to: '/orders' as const, label: 'Orders', icon: ClipboardList },
   { to: '/reports' as const, label: 'Reports', icon: BarChart3 },
+  { to: '/admin' as const, label: 'Admin', icon: Building2 },
   { to: '/settings' as const, label: 'Settings', icon: Settings },
 ]
 

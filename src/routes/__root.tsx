@@ -58,6 +58,7 @@ function RootLayout() {
   const navigate = useNavigate()
   const currentPath = matches[matches.length - 1]?.pathname ?? '/'
   const isLoginPage = currentPath === '/login'
+  const isAdminRoute = currentPath.startsWith('/admin')
 
   useEffect(() => {
     document.documentElement.classList.toggle('dark', theme === 'dark')
@@ -70,6 +71,10 @@ function RootLayout() {
   }, [isAuthenticated, isLoginPage, navigate])
 
   if (isLoginPage || !isAuthenticated) {
+    return <Outlet />
+  }
+
+  if (isAdminRoute) {
     return <Outlet />
   }
 
