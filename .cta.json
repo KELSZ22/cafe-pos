@@ -2,7 +2,7 @@
   "projectName": "paymo",
   "mode": "file-router",
   "typescript": true,
-  "packageManager": "npm",
+  "packageManager": "bun",
   "includeExamples": false,
   "tailwind": true,
   "addOnOptions": {},

@@ -1,5 +1,12 @@
 import { Link, useMatches } from '@tanstack/react-router'
-import { LayoutGrid, UtensilsCrossed, ClipboardList, BarChart3, Settings, Building2 } from 'lucide-react'
+import {
+  LayoutGrid,
+  UtensilsCrossed,
+  ClipboardList,
+  BarChart3,
+  Settings,
+  Building2,
+} from 'lucide-react'
 import { cn } from '#/lib/utils'
 
 const navItems = [
@@ -7,7 +14,7 @@ const navItems = [
   { to: '/menu' as const, label: 'Menu', icon: UtensilsCrossed },
   { to: '/orders' as const, label: 'Orders', icon: ClipboardList },
   { to: '/reports' as const, label: 'Reports', icon: BarChart3 },
-  { to: '/admin' as const, label: 'Admin', icon: Building2 },
+  // { to: '/admin' as const, label: 'Admin', icon: Building2 },
   { to: '/settings' as const, label: 'Settings', icon: Settings },
 ]
 
@@ -36,10 +43,14 @@ export default function SideNav() {
                 <item.icon
                   className={cn(
                     'h-5 w-5 transition-colors',
-                    isActive ? 'text-white' : 'text-cafe-text-light group-hover:text-cafe-brown',
+                    isActive
+                      ? 'text-white'
+                      : 'text-cafe-text-light group-hover:text-cafe-brown',
                   )}
                 />
-                <span className="text-[10px] font-semibold leading-tight">{item.label}</span>
+                <span className="text-[10px] font-semibold leading-tight">
+                  {item.label}
+                </span>
               </Link>
             )
           })}
@@ -57,7 +68,9 @@ export default function SideNav() {
                 to={item.to}
                 className={cn(
                   'flex flex-1 flex-col items-center gap-0.5 rounded-2xl py-1.5 text-center text-[11px] font-semibold no-underline transition-colors',
-                  isActive ? 'text-cafe-brown' : 'text-cafe-text-light hover:text-cafe-brown-dark',
+                  isActive
+                    ? 'text-cafe-brown'
+                    : 'text-cafe-text-light hover:text-cafe-brown-dark',
                 )}
               >
                 <item.icon className="h-5 w-5" />
